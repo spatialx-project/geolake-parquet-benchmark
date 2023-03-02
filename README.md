@@ -8,8 +8,8 @@ The experiments run on 3 datasets:
 
 |                 | Geometry Type   | Records | Points | APER |
 |-----------------|-----------------|---------|--------|------|
-| TIGER2018/Roads | MultiPoint      | 1.7M    | 83M    | 49   |
-| Bananas         | MultiLineString | 18M     | 350M   | 19   |
+| Porto Taxi      | MultiLinePoint  | 1.7M    | 83M    | 49   |
+| TIGER2018/Roads | MultiLineString | 18M     | 350M   | 19   |
 | MSBuildings     | Polygon         | 125M    | 753M   | 6    |
 
 APER: Average points in each record.
