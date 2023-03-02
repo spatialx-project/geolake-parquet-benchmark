@@ -1,6 +1,6 @@
 # GeoLake Parquet
 
-Compare the performance of GeoLake Parquet with other spatial data formats:
+Compare the performance of GeoLake Parquet with other spatial parquet data formats:
 ![exp-data](figures/geolake-parquet-exp.jpg)
 
 The experiments run on 3 datasets:
@@ -14,6 +14,9 @@ The experiments run on 3 datasets:
 
 APER: Average points in each record.
 
+In these experiments, we use two spatial predicates(one large, one small) to hit different numbers of row groups respectively. Note that the predicates constructed for different datasets are different, as below figure shows:
+![spatial-predicate](figures/spatialpredicate.png)
+
 
 ## Build & Run
 
@@ -21,7 +24,7 @@ APER: Average points in each record.
 ./gradlew build
 java -jar build/libs/geolake-benchmark-1.0-SNAPSHOT-all.jar
 ```
-By default, it runs on a very small dataset which is too small to reflect the efficiency of GeoLake Parquet. 
+By default, it runs on a very small dataset which is too small to reflect the efficiency of GeoLake Parquet.
 
 
 In order to run the 3 large datasets mentioned previously, you need to download it first.
@@ -32,7 +35,7 @@ wget https://star.cs.ucr.edu/datasets/TIGER2018/ROADS/download.geojson.gz -O - |
 wget https://star.cs.ucr.edu/datasets/MSBuildings/download.geojson.gz -O - | gzip -d > build/resources/main/source/ucr_msbuildings.geojson
 ```
 
-After downloading, you can run experiment on each dataset with the following commands: 
+After downloading, you can run experiment on each dataset with the following commands:
 ```shell
 java -jar build/libs/geolake-benchmark-1.0-SNAPSHOT-all.jar portotaxi
 java -jar build/libs/geolake-benchmark-1.0-SNAPSHOT-all.jar tiger
