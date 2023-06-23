@@ -323,6 +323,8 @@ public class ParquetBenchmark {
         }
     }
     public static void main(String[] args) throws IOException, ParseException {
+        System.setProperty("arrow.enable_unsafe_memory_access", "true");
+        System.setProperty("arrow.enable_null_check_for_get", "false");
         DataSet ds = BEIJING_SUBWAY_STATION;
         System.out.println(Arrays.toString(args));
         if (args.length > 0) {

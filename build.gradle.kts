@@ -73,6 +73,13 @@ tasks{
     }
 }
 
+tasks.processResources {
+    filesMatching("**/*.geojson") {
+        exclude()
+    }
+}
+
+
 application {
     mainClassName = "com.spatialx.geolake.benchmark.ParquetBenchmark"
 }
